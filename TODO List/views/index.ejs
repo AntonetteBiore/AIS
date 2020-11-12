@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title%></title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <h3 class="font-weight-normal text-center mt-5">My TODO List</h3>
+            <form action="/add" method="post">
+                <div class="d-flex justify-content-center form-group mt-5">
+                    <div class="form-group ">
+                        <input type="text" class="form-control " name="title" id="" placeholder="Title" required>
+                    </div>
+                    <div class="form-group mx-sm-3">
+                        <input type="text" class="form-control" name="task" id="" placeholder="Task" required>
+                    </div>
+                    <div class="form-group ">
+                        <input class="btn btn-primary" type="submit" value=" Add ">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="d-flex justify-content-center form-group mt-5">
+            <form action="/delete" method="post">
+                <% for(let i = 0; i < todos.length; i++){%>
+                    <p class="mx-sm-3 text-left "> Title: &nbsp; <%= todos[i].title%> &nbsp;&nbsp;&nbsp;&nbsp; Task: &nbsp;<%= todos[i].task%>
+                        <input type="hidden" name="id" value="<%=i%>">
+                        <input class="btn btn-danger mx-sm-3" type="submit" value=" Delete ">
+                    </p>
+                <%}%> 
+            </form>
+        </div>
+    </div>
+</body>
+</html>
