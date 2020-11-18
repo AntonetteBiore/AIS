@@ -7,8 +7,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-let Todos = [{title:"Ais",task:"todo list"}, {title:"PHP",task:"Connect to database"}];
-
 require('./connection');
 
 //import todo route

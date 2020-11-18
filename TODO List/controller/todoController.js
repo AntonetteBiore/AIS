@@ -10,7 +10,6 @@ module.exports= {
         } catch (error) {
             res.status(500).send(error)
         }
-    
     },
     addTodos: async(req, res)=>{
         try {
@@ -23,7 +22,6 @@ module.exports= {
         } catch (error) {
             res.status(500).send(error)
         }
-        
     },
     deleteTodos: async(req, res)=>{
         const id = req.params.id
@@ -53,5 +51,4 @@ module.exports= {
             res.status(500).send(error);
         }
     }
-
 }
